@@ -72,7 +72,7 @@ label:active{
 .bg{
 	width: 100%;
 	height: 900px;
-	background-image: url('emojis.jpg');
+	background-image: url('https://ibb.co/zJxjrSn');
 }
 
 textarea{
@@ -213,7 +213,7 @@ img{
 				if(imagem){
 					reader.readAsDataURL(imagem);
 				}else{
-					preview.src = "cenario.png";
+					preview.src = "https://ibb.co/Y0VKLYW";
 				}
 			}
 		</script>
