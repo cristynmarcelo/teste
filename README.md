@@ -1,37 +1,48 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CRIADOR DE MEMES</title>
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Spicy+Rice&display=swap" rel="stylesheet">
+</head>
+<body>
 
-You can use the [editor on GitHub](https://github.com/cristynmarcelo/teste/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+	<div class="head">
+		<div class="logo">
+			<h2>CRIADOR DE MEMES</h2>
+		</div>
+	</div>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+	<div class="fundo-painel">
+		<textarea cols="30" rows="5" placeholder="Escreva seu MEME aqui..."></textarea>
+		<img src="cenario.png">
+		<label for="imagem">Escolha uma imagem do PC &#187;</label>
+		<input type="file" name="imagem" id="imagem" onchange="previewImagem()">
+		<div class="propaganda"></div>
+	</div>
+		
+	<div class="bg"></div>
 
-### Markdown
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/cristynmarcelo/teste/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+	<script>
+			function previewImagem(){
+				var imagem = document.querySelector('input[name=imagem]').files[0];
+				var preview = document.querySelector('img');
+				
+				var reader = new FileReader();
+				
+				reader.onloadend = function () {
+					preview.src = reader.result;
+				}
+				
+				if(imagem){
+					reader.readAsDataURL(imagem);
+				}else{
+					preview.src = "cenario.png";
+				}
+			}
+		</script>
+				
+</body>
+</html>
